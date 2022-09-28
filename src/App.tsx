@@ -1,24 +1,24 @@
 import { Header } from "./components/Header";
-import { Button } from "./components/Button";
+import { Input } from "./components/Input";
+import { Task } from "./components/Task";
 
 import styles from './App.module.css'
+
 
 
 export function App() {
   return (
     <div>
       <Header />
+      <Input
+        placeholder="Adicione uma nova tarefa"
+      />
 
-      <form className={styles.todoForm}>
-        <textarea
-          placeholder="Adicione uma nova tarefa"
-        >
-        </textarea>
-        <Button
-          type="submit"
-          content="Criar"
-        />
-      </form>
+      <Task />
+      <Task />
+      <Task />
+      <Task />
+      
     </div>
   )
 }

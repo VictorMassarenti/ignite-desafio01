@@ -11,7 +11,7 @@ export function Button({ content, ...props }:ButtonProps) {
         <button className={styles.button}
             {...props}>
             {content}
-            <PlusCircle size={16}  />
+            <PlusCircle size={24}  />
         </button>
     )
 }

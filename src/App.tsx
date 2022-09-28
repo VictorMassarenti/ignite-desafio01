@@ -1,7 +1,8 @@
 import { Header } from "./components/Header";
+import { Button } from "./components/Button";
 
 import styles from './App.module.css'
-import { Button } from "./components/Button";
+
 
 export function App() {
   return (
@@ -9,15 +10,15 @@ export function App() {
       <Header />
 
       <form className={styles.todoForm}>
-            <textarea 
-            placeholder="Adicione uma nova tarefa"
-            >
-            </textarea>
-            <Button
-            type='submit' 
-            content="Criar"
-            />
-            </form>
+        <textarea
+          placeholder="Adicione uma nova tarefa"
+        >
+        </textarea>
+        <Button
+          type="submit"
+          content="Criar"
+        />
+      </form>
     </div>
   )
 }

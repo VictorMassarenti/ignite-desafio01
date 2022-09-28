@@ -15,6 +15,10 @@
   --blue-dark: #1E6F9F;
 
 }
+
+:focus {
+  outline: transparent;
+}
 /* FontFamily Inter; FontWeights Regular & Bold; Line Height 140%; FontSize 12, 14 e 16 px */
 body {
   background: var(--gray-600);

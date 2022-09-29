@@ -1,1 +1,57 @@
+.titleTaskBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    gap: 48rem;
+
+    margin-top: 5rem;
+}
+
+.createdTask {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--blue);
+}
+
+.createdTask p {
+    color: var(--gray-200);
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 14.5px;
+
+    box-sizing: border-box;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--gray-400);
+}
+
+.completedTask {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--purple);
+}
+
+.completedTask p {
+    color: var(--gray-200);
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 14.5px;
+
+    box-sizing: border-box;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--gray-400);
+}

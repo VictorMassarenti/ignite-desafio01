@@ -8,7 +8,7 @@ import { ChangeEvent, useState } from "react";
 
 
 export function App() {
-  
+
   const [tasks, setTasks] = useState(['New task!', 'Mais uma new task!'])
   const [newTaskText, setNewTaskText] = useState('');
 
@@ -27,7 +27,7 @@ export function App() {
         onChange={handleNewTaskTextChange}
       />
 
-        <div className={styles.titleTaskBox}> 
+      <div className={styles.titleTaskBox}>
         <span className={styles.createdTask}>
           Tarefas criadas
           <p>5</p>
@@ -36,7 +36,7 @@ export function App() {
           Concluídas
           <p>2 de 5</p>
         </span>
-        </div>
+      </div>
 
       <div>
         {tasks.map(task => {

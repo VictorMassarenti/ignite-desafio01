@@ -3,8 +3,6 @@
     align-items: center;
     justify-content: center;
 
-    gap: 50vw;
-
     margin-top: 5rem;
 }
 
@@ -13,7 +11,8 @@
     align-items: center;
     justify-content: center;
 
-    gap: 10px;
+    width: 50%;
+    gap: 2px;
 
     font-size: 0.875rem;
     font-weight: 700;
@@ -37,7 +36,8 @@
     align-items: center;
     justify-content: center;
 
-    gap: 10px;
+    width: 50%;
+    gap: 2px;
 
     font-size: 0.875rem;
     font-weight: 700;

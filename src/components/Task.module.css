@@ -40,7 +40,20 @@
     user-select: none;
 }
 
-/* Hide the browser's default checkbox */
+.containerChecked {
+    display: block;
+    position: relative;
+    padding-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Esconder o check default */
 .container input {
     position: absolute;
     opacity: 0;
@@ -49,7 +62,15 @@
     width: 0;
 }
 
-/* Create a custom checkbox */
+.containerChecked input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Criado um checkbox novo */
 .checkmark {
     position: absolute;
     top: 0;
@@ -61,35 +82,36 @@
     background-color: transparent;
 }
 
-/* On mouse-over, add a grey background color */
-.container:hover input~.checkmark {
+/* Hover SEM checked */
+.container:hover .checkmark {
     background-color: var(--blue-dark);
 }
 
-.container:hover input:checked~.checkmark {
+/* Hover COM checked */
+.containerChecked:hover .checkmark {
     background-color: var(--purple);
 }
 
-/* When the checkbox is checked, add a blue background */
-.container input:checked~.checkmark {
+/* Checked styles */
+.containerChecked .checkmark {
     background-color: var(--purple-dark);
     border: var(--purple-dark);
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
+/* Checkmark hidden */
 .checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
 
-/* Show the checkmark when checked */
-.container input:checked~.checkmark:after {
+/* Mostrar checkmark ao dar check */
+.containerChecked .checkmark:after {
     display: block;
 }
 
-/* Style the checkmark/indicator */
-.container .checkmark:after {
+/* Style checkmark */
+.containerChecked .checkmark:after {
     left: 9px;
     top: 5px;
     width: 5px;
@@ -114,7 +136,8 @@
     line-height: 16px;
 }
 
-.container input:checked~.taskParagraph {
+/* Riscar texto ao dar checked */
+.containerChecked .taskParagraph {
     text-decoration: line-through;
     color: var(--gray-300);
 }

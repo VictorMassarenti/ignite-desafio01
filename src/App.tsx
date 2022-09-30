@@ -1,25 +1,26 @@
 import { Header } from "./components/Header";
-import { Input } from "./components/Input";
 import { Task } from "./components/Task";
 
 import styles from './App.module.css'
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { PlusCircle } from "phosphor-react";
 
 
 
 export function App() {
 
-  const [tasks, setTasks] = useState(['New task!', 'Mais uma new task!'])
-  const [newTaskText, setNewTaskText] = useState('');
+  const [taskList, setTaskList] = useState(['New task!', 'Mais uma new task!'])
+  const [newTask, setNewTask] = useState('');
 
   function handleNewTaskTextChange(event: ChangeEvent<HTMLTextAreaElement>) {
     event.target.setCustomValidity('');
-    setNewTaskText(event.target.value);
+    setNewTask(event.target.value);
   }
 
-  function handleCreateNewTaskText() {
-
+  function handleCreateNewTaskText(event: FormEvent) {
+    event.preventDefault()
+    setTaskList([...taskList, newTask]);
+    setNewTask('');
   }
 
   return (
@@ -29,7 +30,7 @@ export function App() {
       <form onSubmit={handleCreateNewTaskText} className={styles.todoForm}>
         <textarea
           placeholder="Adicione uma nova tarefa"
-          value={newTaskText}
+          value={newTask}
           onChange={handleNewTaskTextChange}
           required
         >
@@ -53,7 +54,7 @@ export function App() {
       </div>
 
       <div>
-        {tasks.map(task => {
+        {taskList.map(task => {
           return (
             <Task
               key={task}

@@ -6,11 +6,13 @@ interface textarea extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     placeholder: string;
 }
 
-export function Input({ placeholder }: textarea) {
+export function Input({ placeholder, ...props }: textarea) {
     return (
         <form className={styles.todoForm}>
             <textarea
-                placeholder={placeholder}>
+                placeholder={placeholder}
+                {...props}
+                >
             </textarea>
 
             <button className={styles.button}>

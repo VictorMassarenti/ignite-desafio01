@@ -28,7 +28,6 @@ export function App() {
       <Task />
       <Task />
       <Task />
-      <Task />
 
     </div>
   )

@@ -9,7 +9,7 @@ export function Task() {
         <span className={styles.checkmark}></span>
 
         <p className={styles.taskParagraph}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
       </label>
 

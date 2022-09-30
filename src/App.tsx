@@ -11,13 +11,14 @@ export function App() {
 
   const [taskList, setTaskList] = useState(['New task!', 'Mais uma new task!'])
   const [newTask, setNewTask] = useState('');
+  const countTaskCreated = taskList.length
 
-  function handleNewTaskTextChange(event: ChangeEvent<HTMLTextAreaElement>) {
+  function handleTextTaskChange(event: ChangeEvent<HTMLTextAreaElement>) {
     event.target.setCustomValidity('');
     setNewTask(event.target.value);
   }
 
-  function handleCreateNewTaskText(event: FormEvent) {
+  function handleCreateNewTask(event: FormEvent) {
     event.preventDefault()
     setTaskList([...taskList, newTask]);
     setNewTask('');
@@ -27,11 +28,11 @@ export function App() {
     <div>
       <Header />
 
-      <form onSubmit={handleCreateNewTaskText} className={styles.todoForm}>
+      <form onSubmit={handleCreateNewTask} className={styles.todoForm}>
         <textarea
           placeholder="Adicione uma nova tarefa"
           value={newTask}
-          onChange={handleNewTaskTextChange}
+          onChange={handleTextTaskChange}
           required
         >
         </textarea>
@@ -45,7 +46,7 @@ export function App() {
       <div className={styles.titleTaskBox}>
         <span className={styles.createdTask}>
           Tarefas criadas
-          <p>5</p>
+          <p>{countTaskCreated}</p>
         </span>
         <span className={styles.completedTask}>
           Concluídas

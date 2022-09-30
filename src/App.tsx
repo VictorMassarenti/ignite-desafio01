@@ -3,10 +3,14 @@ import { Input } from "./components/Input";
 import { Task } from "./components/Task";
 
 import styles from './App.module.css'
+import { useState } from "react";
 
 
 
 export function App() {
+  
+  const [tasks, setTasks] = useState(['New task!', 'Mais uma new task!'])
+
   return (
     <div>
       <Header />
@@ -25,9 +29,16 @@ export function App() {
         </span>
         </div>
 
-      <Task />
-      <Task />
-      <Task />
+      <div>
+        {tasks.map(task => {
+          return (
+            <Task
+              key={task}
+              content={task}
+            />
+          )
+        })}
+      </div>
 
     </div>
   )

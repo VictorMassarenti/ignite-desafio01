@@ -1,7 +1,11 @@
 import { Trash } from "phosphor-react"
 import styles from "./Task.module.css"
 
-export function Task() {
+interface TaskProps {
+  content: string;
+}
+
+export function Task({ content }: TaskProps) {
   return (
     <div className={styles.task}>
       <label className={styles.container}>
@@ -9,7 +13,7 @@ export function Task() {
         <span className={styles.checkmark}></span>
 
         <p className={styles.taskParagraph}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          {content}
         </p>
       </label>
 

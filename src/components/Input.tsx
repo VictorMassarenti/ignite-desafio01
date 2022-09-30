@@ -1,5 +1,5 @@
-import { TextareaHTMLAttributes } from 'react';
-import { Button } from './Button'
+import { PlusCircle } from 'phosphor-react';
+import { TextareaHTMLAttributes, useState } from 'react';
 import styles from './Input.module.css'
 
 interface textarea extends TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -12,10 +12,11 @@ export function Input({ placeholder }: textarea) {
             <textarea
                 placeholder={placeholder}>
             </textarea>
-            <Button
-                type="submit"
-                content="Criar"
-            />
+
+            <button className={styles.button}>
+                Criar
+                <PlusCircle size={24} />
+            </button>
         </form>
     )
 }

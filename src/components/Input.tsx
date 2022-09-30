@@ -2,11 +2,11 @@ import { PlusCircle } from 'phosphor-react';
 import { TextareaHTMLAttributes, useState } from 'react';
 import styles from './Input.module.css'
 
-interface textarea extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+interface InputProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     placeholder: string;
 }
 
-export function Input({ placeholder, ...props }: textarea) {
+export function Input({ placeholder, ...props }: InputProps) {
     return (
         <form className={styles.todoForm}>
             <textarea
@@ -15,7 +15,7 @@ export function Input({ placeholder, ...props }: textarea) {
                 >
             </textarea>
 
-            <button className={styles.button}>
+            <button type="submit" className={styles.button}>
                 Criar
                 <PlusCircle size={24} />
             </button>

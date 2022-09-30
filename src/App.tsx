@@ -4,6 +4,7 @@ import { Task } from "./components/Task";
 
 import styles from './App.module.css'
 import { ChangeEvent, useState } from "react";
+import { PlusCircle } from "phosphor-react";
 
 
 
@@ -15,17 +16,30 @@ export function App() {
   function handleNewTaskTextChange(event: ChangeEvent<HTMLTextAreaElement>) {
     event.target.setCustomValidity('');
     setNewTaskText(event.target.value);
-    console.log(newTaskText)
+  }
+
+  function handleCreateNewTaskText() {
+
   }
 
   return (
     <div>
       <Header />
-      <Input
-        placeholder="Adicione uma nova tarefa"
-        value={newTaskText}
-        onChange={handleNewTaskTextChange}
-      />
+
+      <form onSubmit={handleCreateNewTaskText} className={styles.todoForm}>
+        <textarea
+          placeholder="Adicione uma nova tarefa"
+          value={newTaskText}
+          onChange={handleNewTaskTextChange}
+          required
+        >
+        </textarea>
+
+        <button type="submit" className={styles.button}>
+          Criar
+          <PlusCircle size={24} />
+        </button>
+      </form>
 
       <div className={styles.titleTaskBox}>
         <span className={styles.createdTask}>

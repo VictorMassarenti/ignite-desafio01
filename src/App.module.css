@@ -55,3 +55,69 @@
     border-radius: 999px;
     background: var(--gray-400);
 }
+
+.todoForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 0 1rem;
+    margin-top: calc(0px - 1.5rem - 6px);
+}
+
+.todoForm textarea {
+    line-height: 1.375rem;
+    font-weight: 400;
+
+    box-sizing: border-box;
+    width: 60rem;
+    resize: none;
+
+    border: solid 1.5px;
+    border-radius: 5px;
+
+    color: var(--gray-300);
+    background: var(--gray-500);
+    border-color: var(--gray-700);
+
+    padding: .3rem;
+
+}
+
+.todoForm textarea:focus {
+    box-shadow: 0 0 0 2px var(--purple);
+    color: var(--gray-100);
+}
+
+.button {
+    font-weight: 700;
+
+    width: 90px;
+    font-size: 0.875rem;
+
+    color: var(--gray-100);
+    background-color: var(--blue-dark);
+
+    padding: 1rem;
+    border-radius: 8px;
+    border: none;
+
+    display: flex;
+    align-items: center;
+
+    gap: 0.5rem;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: var(--blue);
+}
+
+.button:focus {
+    box-shadow: 0 0 0 2px var(--gray-100);
+}

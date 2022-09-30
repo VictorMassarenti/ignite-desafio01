@@ -11,7 +11,7 @@ export function App() {
 
   const [taskList, setTaskList] = useState(['New task!', 'Mais uma new task!'])
   const [newTask, setNewTask] = useState('');
-  const countTaskCreated = taskList.length
+  const taskCreatedCount = taskList.length
 
   function handleTextTaskChange(event: ChangeEvent<HTMLTextAreaElement>) {
     event.target.setCustomValidity('');
@@ -22,6 +22,13 @@ export function App() {
     event.preventDefault()
     setTaskList([...taskList, newTask]);
     setNewTask('');
+  }
+
+  function deleteTask(taskToDelete: string) {
+    const taskWithoutDeletedOne = taskList.filter(task =>{
+      return task !== taskToDelete;
+    })
+    setTaskList(taskWithoutDeletedOne);
   }
 
   return (
@@ -46,11 +53,11 @@ export function App() {
       <div className={styles.titleTaskBox}>
         <span className={styles.createdTask}>
           Tarefas criadas
-          <p>{countTaskCreated}</p>
+          <p>{taskCreatedCount}</p>
         </span>
         <span className={styles.completedTask}>
           Concluídas
-          <p>2 de 5</p>
+          <p>2 de {taskCreatedCount}</p>
         </span>
       </div>
 
@@ -60,6 +67,7 @@ export function App() {
             <Task
               key={task}
               content={task}
+              onDeleteTask={deleteTask}
             />
           )
         })}
